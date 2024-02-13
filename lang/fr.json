@@ -1,4 +1,5 @@
 {
+    "Title": "Conseil de Coordination Ammale",
     "(and :count more error)": "(et :count erreur en plus)",
     "(and :count more errors)": "(et :count erreurs en plus)",
     "A Timeout Occurred": "Un dépassement de délai s'est produit",
@@ -66,7 +67,7 @@
     "Hello!": "Bonjour !",
     "Hide": "Cacher",
     "Hide :name": "Masquer :name",
-    "Home": "Maison",
+    "Home": "Accueil",
     "HTTP Version Not Supported": "Version HTTP non prise en charge",
     "I'm a teapot": "Je suis une théière",
     "If you did not create an account, no further action is required.": "Si vous n'avez pas créé de compte, vous pouvez ignorer ce message.",
@@ -204,5 +205,7 @@
     "Web Server is Down": "Le serveur Web est en panne",
     "Whoops!": "Oups !",
     "Yes": "Oui",
+    "About": "À propos",
+    "Statements": "Déclarations",
     "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte."
 }

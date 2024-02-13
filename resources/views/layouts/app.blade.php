@@ -1,13 +1,22 @@
+@php
+    $categories = \App\Models\Category::where('published',1)->get();
+
+@endphp
 <!DOCTYPE html>
 <html lang="{{\Illuminate\Support\Facades\App::currentLocale()}}" dir="{{\Illuminate\Support\Facades\App::currentLocale() == 'ar' ? 'rtl' : 'ltr'}}">
 
 <head>
-    <title>{{config('app.name') . ' | '}} @yield('title')</title>
+    <title>{{__("Title") . ' | '}} @yield('title')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/logo/logo.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicons/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicons/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('favicons/site.webmanifest')}}">
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap{{(\Illuminate\Support\Facades\App::currentLocale() == 'ar' ? '.rtl' : '')}}.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/icofont.min.css')}}">
@@ -18,6 +27,31 @@
 </head>
 
 <body>
+
+
+<!-- Start Search Modal -->
+
+<div class="modal fade" id="search" tabindex="-1" aria-labelledby="search" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h1 class="modal-title fs-5" id="search">{{__('home.search')}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="GET" class="d-flex" role="search">
+
+                    <input class="form-control me-2" name="result" type="search" placeholder="" aria-label="Search">
+                    <button class="lab-btn btn-sm" type="submit">{{__('home.search')}}</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Search Modal -->
+
 
 <!-- preloader start here -->
 <div class="preloader">
@@ -37,17 +71,21 @@
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-xl-3 col-12">
-                <div class="mobile-menu-wrapper d-flex flex-wrap align-items-center justify-content-between">
+                <div class="mobile-menu-wrapper d-flex flex-wrap align-items-center justify-content-between justify-content-lg-center">
                     <div class="header-bar d-lg-none">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                    <div class="logo text-center">
+                    <div class="logo">
                         <a href="{{url('/') . config('app.locale')}}">
-                            <img src="{{asset('assets/images/logo/logo.png')}}" alt="logo" class="mb-2" style="width: 200px;height: 50px;object-fit: contain;">
-                            <h6 style="font-size: 16px" class="my-0">المجلس التنسيقي آمال</h6>
-                            <span style="font-size: 12px">تحالف المساجد والهيئات والقيادات الإسلامية في أوروبا</span>
+                            @if(config('app.locale') == 'ar')
+                                <img src="{{asset('assets/images/logo/logo-arabic.svg')}}" alt="logo" style="width: 125px">
+                            @elseif(config('app.locale') == 'fr')
+                                <img src="{{asset('assets/images/logo/logo-french.svg')}}" alt="logo" style="width: 125px">
+                            @else
+                                <img src="{{asset('assets/images/logo/logo-english.svg')}}" alt="logo" style="width: 125px">
+                            @endif
                         </a>
                     </div>
                     <div class="ellepsis-bar d-lg-none">
@@ -93,11 +131,11 @@
                         <div class="menu-area justify-content-between w-100">
                             <ul class="menu lab-ul">
                                 <li>
-                                    <a href="{{'/' . config('app.locale')}}">الرئيسية</a>
+                                    <a href="{{'/' . config('app.locale')}}">{{__('Home')}}</a>
                                 </li>
 
                                 <li>
-                                    <a href="#">عن آمال</a>
+                                    <a href="#">{{__('About')}}</a>
                                     <ul class="submenu">
                                         <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">الهوية والرؤية</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about'}}">الأهداف والأدوات</a></li>
@@ -107,14 +145,13 @@
                                         <li><a href="#">اللجان الخاصة</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">البيانات</a></li>
-                                <li><a href="#">الرسالة الدورية</a></li>
+                                <li><a href="#">{{__('Statements')}}</a></li>
                                 <li><a href="#">الفعاليات</a></li>
+                                <li><a href="#">الأخبار</a></li>
+                                <li><a href="#">الرسالة الدورية</a></li>
                                 <li><a href="{{'/' . config('app.locale') . '/contact'}}">إتصل بنا</a></li>
                                 <li><a href="#">إدعمنا</a></li>
-                                <li><a href="#">إبحث</a></li>
-
-                                <li class="ms-auto ">
+                                <li class="me-auto">
                                     <a href="{{url('/ar')}}">عربي</a>
                                     <ul class="submenu">
                                         <li><a href="{{url('/en')}}">English</a></li>
@@ -122,7 +159,13 @@
                                         <li><a href="{{url('/de')}}">Deutsche</a></li>
                                     </ul>
                                 </li>
+
+                                <li><a href="#search" data-bs-toggle="modal"><i class="fas fa-search"></i></a></li>
+
                             </ul>
+
+
+
 
                         </div>
                     </div>
@@ -194,6 +237,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
     </div>
     <div class="footer-middle padding-tb tri-shape-3">
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="footer-middle-item-wrapper">
@@ -236,23 +280,25 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                     <div class="footer-middle-item-wrapper">
                         <div class="footer-middle-item-3 mb-5 mb-lg-0">
                             <div class="fm-item-title">
-                                <h5>OUR NEWSLETTER</h5>
+                                <h5>التصنيفات</h5>
+                                <div class="widget widget-tags">
+                                    <ul class="lab-ul widget-wrapper justify-content-start">
+                                        @foreach($categories as $category)
+                                            <li><a href="{{url('category/' . $category->title)}}" class="text-white">{{$category->title . ' (' . count($category->posts) . ")"}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
                             <div class="fm-item-content">
-                                <p>Hafsa is a nonproﬁt organization supported
-                                    by community leaders</p>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Enter email">
-                                    </div>
-                                    <button type="submit" class="lab-btn">Send Massage <i
-                                            class="icofont-paper-plane"></i></button>
-                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
         </div>
     </div>
     <div class="footer-bottom">
@@ -260,6 +306,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
             <div class="row">
                 <div class="col-12">
                     <div class="footer-bottom-content text-center  my-0 py-4">
+                        <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" class="mb-3" alt="logo" style="width: 120px">
                         <p>كل الحقوق محفوظة المجلس التنسيقي آمال &copy; 2024</p>
                     </div>
                 </div>
@@ -271,8 +318,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
 
 
 <!-- scrollToTop start here -->
-<a href="#" class="scrollToTop"><i class="icofont-bubble-up"></i><span class="pluse_1"></span><span
-        class="pluse_2"></span></a>
+<a href="#" class="scrollToTop d-flex justify-content-center align-items-center"><i class="icofont-bubble-up"></i><span class="pluse_1"></span><span class="pluse_2"></span></a>
 <!-- scrollToTop ending here -->
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','الرئيسية')
+@section('title',__("Home"))
 
 @section('content')
 
@@ -11,7 +11,7 @@
         <div class="container">
             <div id="LastPosts" class="carousel slide overflow-hidden position-relative shadow mb-5" data-bs-ride="carousel">
 
-                <div class="carousel-inner ">
+                <div class="carousel-inner">
 
                         @foreach($slider_posts as  $key => $post)
                             @php $active = $key @endphp
@@ -43,7 +43,6 @@
                     @endforeach
 
                 </div>
-
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#LastPosts" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -84,7 +83,7 @@
                                                 <img src="{{asset('storage/' . $post->thumbnail)}}" alt="event-image" style="height: 250px;object-fit: cover">
                                             </div>
                                             <div class="lab-content">
-                                                <h5><a href="{{url('ar/post/' .  $post->slug)}}" class="text-truncate">{{$post->title}}</a> </h5>
+                                                <h5 class="fs-6"><a href="{{url('ar/post/' .  $post->slug)}}" class="text-truncate">{{$post->title}}</a> </h5>
                                                 <ul class="lab-ul event-date">
                                                     <li><i class="icofont-calendar"></i> <span>{{date_format($post->created_at,'d-m-Y')}}</span>
                                                     </li>

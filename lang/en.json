@@ -1,4 +1,5 @@
 {
+    "Title": "Coordinating Council Ammale",
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
     "A Timeout Occurred": "A Timeout Occurred",
@@ -204,5 +205,7 @@
     "Web Server is Down": "Web Server is Down",
     "Whoops!": "Whoops!",
     "Yes": "Yes",
-    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account."
+    "About": "About Ammale",
+    "Statements": "Statements",
+    "You are receiving this email beca  use we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account."
 }

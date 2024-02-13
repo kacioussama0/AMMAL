@@ -9,7 +9,7 @@
         <div class="container">
             <div class="error-wrapper d-flex justify-content-center flex-column align-items-center">
                 <div>
-                    <img src="{{asset('assets/images/logo/logo.png')}}" alt="logo">
+                    <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" alt="logo" width="300" class="img-fluid">
                 </div>
                 <div class="error-content text-center mt-5">
                     <h3 class="mb-4">عذرا! الصفحة غير موجودة</h3>
