@@ -77,14 +77,14 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <div class="logo">
+                    <div class="logo my-2">
                         <a href="{{url('/') . config('app.locale')}}">
                             @if(config('app.locale') == 'ar')
-                                <img src="{{asset('assets/images/logo/logo-arabic.svg')}}" alt="logo" style="width: 125px">
+                                <img src="{{asset('assets/images/logo/logo-arabic.svg')}}" alt="logo" style="width: 100px">
                             @elseif(config('app.locale') == 'fr')
-                                <img src="{{asset('assets/images/logo/logo-french.svg')}}" alt="logo" style="width: 125px">
+                                <img src="{{asset('assets/images/logo/logo-french.svg')}}" alt="logo" style="width: 100px">
                             @else
-                                <img src="{{asset('assets/images/logo/logo-english.svg')}}" alt="logo" style="width: 125px">
+                                <img src="{{asset('assets/images/logo/logo-english.svg')}}" alt="logo" style="width: 100px">
                             @endif
                         </a>
                     </div>
@@ -94,39 +94,39 @@
                 </div>
             </div>
             <div class="col-xl-9 col-12">
-                <div class="header-top">
-                    <div class="header-top-area">
-                        <ul class="left lab-ul">
-                            <li>
-                                <i class="icofont-ui-call"></i> <span>+33 23 339 702 520</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i> Place du Puits de l’Ermite, 75005 Paris
+{{--                <div class="header-top">--}}
+{{--                    <div class="header-top-area">--}}
+{{--                        <ul class="left lab-ul">--}}
+{{--                            <li>--}}
+{{--                                <i class="icofont-ui-call"></i> <span>+33 23 339 702 520</span>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <i class="fas fa-map-marker-alt"></i> Place du Puits de l’Ermite, 75005 Paris--}}
 
-                            </li>
-                        </ul>
-                        <ul class="social-icons lab-ul d-flex">
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <ul class="social-icons lab-ul d-flex">--}}
 
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="#"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="#"><i class="fab fa-youtube"></i></a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="#"><i class="fab fa-twitter"></i></a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="#"><i class="fab fa-instagram"></i></a>--}}
+{{--                            </li>--}}
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="header-bottom">
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="header-bottom mb-0">
                     <div class="header-wrapper">
                         <div class="menu-area justify-content-between w-100">
                             <ul class="menu lab-ul">
@@ -152,11 +152,21 @@
                                 <li><a href="{{'/' . config('app.locale') . '/contact'}}">إتصل بنا</a></li>
                                 <li><a href="#">إدعمنا</a></li>
                                 <li class="me-auto">
-                                    <a href="{{url('/ar')}}">عربي</a>
+                                    @if(\Illuminate\Support\Facades\App::getLocale() == "fr")
+                                        <li><a href="{{url('/fr')}}">Français</a>
+                                    @elseif(\Illuminate\Support\Facades\App::getLocale() == 'en')
+                                        <li><a href="{{url('/en')}}">English</a>
+                                    @elseif(\Illuminate\Support\Facades\App::getLocale() == 'de')
+                                        <li><a href="{{url('/de')}}">Deutsche</a>
+                                    @else
+                                        <li><a href="{{url('/ar')}}">عربي</a>
+                                    @endif
+
                                     <ul class="submenu">
-                                        <li><a href="{{url('/en')}}">English</a></li>
-                                        <li><a href="{{url('/fr')}}">Français</a></li>
-                                        <li><a href="{{url('/de')}}">Deutsche</a></li>
+                                        @if(\Illuminate\Support\Facades\App::getLocale() != "ar")<li><a href="{{url('/ar')}}">عربي</a></li>@endif
+                                        @if(\Illuminate\Support\Facades\App::getLocale() != "en")<li><a href="{{url('/en')}}">English</a></li> @endif
+                                        @if(\Illuminate\Support\Facades\App::getLocale() != "fr")<li><a href="{{url('/fr')}}">Français</a></li>@endif
+                                        @if(\Illuminate\Support\Facades\App::getLocale() != "de")<li><a href="{{url('/de')}}">Deutsche</a></li>@endif
                                     </ul>
                                 </li>
 
@@ -262,11 +272,11 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                     <div class="fm-item-widget lab-item">
                                         <div class="lab-inner">
                                             <div class="lab-thumb">
-                                                <a href="{{url('/ar/post/' . $post->slug)}}"> <img src="{{asset('storage/' . $post->thumbnail)}}"
+                                                <a href="{{url('/ar/post/' . $post->slug())}}"> <img src="{{asset('storage/' . $post->thumbnail())}}"
                                                                   alt="footer-widget-img" style="height: 100px"></a>
                                             </div>
                                             <div class="lab-content">
-                                                <h6><a href="{{url('/ar/post/' . $post->slug)}}">{{$post->title}}</a></h6>
+                                                <h6><a href="{{url('/ar/post/' . $post->slug())}}">{{$post->title()}}</a></h6>
                                                 <p>{{date_format($post->created_at,"d-m-Y")}}</p>
                                             </div>
                                         </div>
@@ -284,7 +294,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                 <div class="widget widget-tags">
                                     <ul class="lab-ul widget-wrapper justify-content-start">
                                         @foreach($categories as $category)
-                                            <li><a href="{{url('category/' . $category->title)}}" class="text-white">{{$category->title . ' (' . count($category->posts) . ")"}}</a></li>
+                                            <li><a href="{{url('category/' . $category->title())}}" class="text-white">{{$category->title() . ' (' . count($category->posts) . ")"}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

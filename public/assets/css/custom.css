@@ -1,11 +1,11 @@
 
 .carousel {
-    height: 90vh !important;
+    height: 100vh !important;
     position: relative !important;
 }
 
 .carousel-item {
-    height: 90vh !important;
+    height: 100vh !important;
     position: relative !important;
 }
 
@@ -43,4 +43,10 @@
 .carousel-content h3 a {
     color: #fff;
     text-align: center;
+}
+
+.about-section .lab-item .lab-inner .lab-thumb .img-grp .about-fg-img {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%,-50%) !important;
 }

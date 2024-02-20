@@ -109,33 +109,33 @@ class PostController extends Controller
 
         $ext = $request->file('thumbnail')->extension();
 
-        $this->resizeImage(Str::slug($request->title,'-','ar') . '-original.' . $ext ,'storage/posts/ar/',$request->file('thumbnail'));
+        $image = $this->resizeImage(Str::slug($request->title,'-','ar') . '-original.' . $ext ,'storage/posts/ar/',$request->file('thumbnail'));
         $this->resizeImage(Str::slug($request->title,'-','ar') . '-small.' . $ext,'storage/posts/ar/',$request->file('thumbnail'),150,150);
-        $image = $this->resizeImage(Str::slug($request->title,'-','ar') . '-medium.' . $ext,'storage/posts/ar/',$request->file('thumbnail'),300,300);
+        $this->resizeImage(Str::slug($request->title,'-','ar') . '-medium.' . $ext,'storage/posts/ar/',$request->file('thumbnail'),300,300);
         $this->resizeImage(Str::slug($request->title,'-','ar') . '-large.' . $ext,'storage/posts/ar/',$request->file('thumbnail'),1024,1024);
 
 
         if(!empty($request->file('thumbnail_en'))) {
             $ext = $request->file('thumbnail_en')->extension();
-            $this->resizeImage(Str::slug($request->title_en) . '-original.' . $ext ,'storage/posts/en/',$request->file('thumbnail_en'));
+            $imageEN = $this->resizeImage(Str::slug($request->title_en) . '-original.' . $ext ,'storage/posts/en/',$request->file('thumbnail_en'));
             $this->resizeImage(Str::slug($request->title_en) . '-small.' . $ext,'storage/posts/en/',$request->file('thumbnail_en'),150,150);
-            $imageEN = $this->resizeImage(Str::slug($request->title_en) . '-medium.' . $ext,'storage/posts/en/',$request->file('thumbnail_en'),300,300);
+            $this->resizeImage(Str::slug($request->title_en) . '-medium.' . $ext,'storage/posts/en/',$request->file('thumbnail_en'),300,300);
             $this->resizeImage(Str::slug($request->title_en) . '-large.' . $ext,'storage/posts/en/',$request->file('thumbnail_en'),1024,1024);
         }
 
         if(!empty($request->file('thumbnail_fr'))) {
             $ext = $request->file('thumbnail_fr')->extension();
-            $this->resizeImage(Str::slug($request->title_fr) . '-original.' . $ext ,'storage/posts/fr/',$request->file('thumbnail_fr'));
+            $imageFR = $this->resizeImage(Str::slug($request->title_fr) . '-original.' . $ext ,'storage/posts/fr/',$request->file('thumbnail_fr'));
             $this->resizeImage(Str::slug($request->title_fr) . '-small.' . $ext,'storage/posts/fr/',$request->file('thumbnail_fr'),150,150);
-            $imageFR = $this->resizeImage(Str::slug($request->title_fr) . '-medium.' . $ext,'storage/posts/fr/',$request->file('thumbnail_fr'),300,300);
+            $this->resizeImage(Str::slug($request->title_fr) . '-medium.' . $ext,'storage/posts/fr/',$request->file('thumbnail_fr'),300,300);
             $this->resizeImage(Str::slug($request->title_fr) . '-large.' . $ext,'storage/posts/fr/',$request->file('thumbnail_fr'),1024,1024);
         }
 
         if(!empty($request->file('thumbnail_de'))) {
             $ext = $request->file('thumbnail_de')->extension();
             $this->resizeImage(Str::slug($request->title_de) . '-original.' . $ext ,'storage/posts/de/',$request->file('thumbnail_de'));
-            $this->resizeImage(Str::slug($request->title_de) . '-small.' . $ext,'storage/posts/de/',$request->file('thumbnail_de'),150,150);
-            $imageDE = $this->resizeImage(Str::slug($request->title_de) . '-medium.' . $ext,'storage/posts/de/',$request->file('thumbnail_de'),300,300);
+            $imageDE = $this->resizeImage(Str::slug($request->title_de) . '-small.' . $ext,'storage/posts/de/',$request->file('thumbnail_de'),150,150);
+            $this->resizeImage(Str::slug($request->title_de) . '-medium.' . $ext,'storage/posts/de/',$request->file('thumbnail_de'),300,300);
             $this->resizeImage(Str::slug($request->title_de) . '-large.' . $ext,'storage/posts/de/',$request->file('thumbnail_de'),1024,1024);
         }
 

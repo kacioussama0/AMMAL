@@ -30,7 +30,7 @@
 
                         <div class="form-floating mb-3">
                             <input type="text" name="slug" class="form-control" id="slug" placeholder="Your Slug" value="{{old('slug')}}">
-                            <label for="slug">Slug <span class="text-danger">*</span></label>
+                            <label for="slug">Slug</label>
                             @error('slug')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -52,7 +52,7 @@
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="slug_en" class="form-control" id="slug_en" placeholder="Your Slug" value="{{old('slug_en')}}">
-                            <label for="slug_en">Slug English <span class="text-danger">*</span></label>
+                            <label for="slug_en">Slug English</label>
                             @error('slug_en')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -73,7 +73,7 @@
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="slug_fr" class="form-control" id="slug_fr" placeholder="Your Slug" value="{{old('slug_fr')}}">
-                            <label for="slug_fr">Slug French <span class="text-danger">*</span></label>
+                            <label for="slug_fr">Slug French</label>
                             @error('slug_fr')
                             <span class="text-danger">{{$message}}</span>
                             @enderror

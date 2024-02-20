@@ -26,11 +26,9 @@
                     </div>
 
                     <div class="col-md-6">
-
-
                         <div class="form-floating mb-3">
                             <input type="text" name="slug" class="form-control" id="slug" placeholder="Your Slug" value="{{$category->slug}}">
-                            <label for="slug">Slug <span class="text-danger">*</span></label>
+                            <label for="slug">Slug</label>
                             @error('slug')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -38,11 +36,10 @@
 
                     </div>
 
-
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="title_en" class="form-control" id="title_en" placeholder="Your Title" value="{{$category->title_en}}">
-                            <label for="title_en">Title English</label>
+                            <label for="title_en">Title English <span class="text-danger">*</span></label>
                             @error('title_en')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -63,7 +60,7 @@
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="title_fr" class="form-control" id="title_fr" placeholder="Your Title" value="{{$category->title_fr}}">
-                            <label for="title_fr">Title French</label>
+                            <label for="title_fr">Title French <span class="text-danger">*</span></label>
                             @error('title_fr')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -84,7 +81,7 @@
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="title_de" class="form-control" id="title_de" placeholder="Your Title" value="{{$category->title_de}}">
-                            <label for="title_de">Title Deutsche</label>
+                            <label for="title_de">Title Deutsche <span class="text-danger">*</span></label>
                             @error('title_de')
                             <span class="text-danger">{{$message}}</span>
                             @enderror

@@ -4,10 +4,10 @@
     <!-- Brand Logo Light -->
     <a href="index.html" class="logo logo-light">
         <span class="logo-lg">
-            <img src="{{asset('assets_dashboard/images/logo.png')}}" alt="logo">
+            <img src="{{asset('assets/images/logo/logo-white.svg')}}" alt="logo" style="height: 50px !important;">
         </span>
         <span class="logo-sm">
-            <img src="{{asset('assets_dashboard/images/logo-sm.png')}}" alt="small logo">
+            <img src="{{asset('assets/images/logo/logo-white.svg')}}" alt="small logo" style="height: 50px !important;">
         </span>
     </a>
 

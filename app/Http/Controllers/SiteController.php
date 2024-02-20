@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResource;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -14,9 +15,11 @@ class SiteController extends Controller
    {
        App::setLocale($lang);
 
+       $categories = Category::where('published',1)->get();
+
        $slider_posts = Post::where('is_published',1)->latest()->take(5)->get();
        $latestPosts = Post::where('is_published',1)->latest()->take(6)->get();
-       return view('index',compact('slider_posts','latestPosts'));
+       return view('index',compact('slider_posts','latestPosts','categories'));
    }
 
    public function about($lang)

@@ -70,7 +70,7 @@
 
 
 
-        // lightcase 
+        // lightcase
         $('a[data-rel^=lightcase]').lightcase();
 
         // search cart option
@@ -141,10 +141,10 @@
         });
 
 
-        
+
         //Isotope
-        
-        jQuery(window).on('load',function() { 
+
+        jQuery(window).on('load',function() {
             var $grid = $('.grid').isotope({
                 itemSelector: '.grid-item',
                 masonry: {
@@ -231,11 +231,11 @@
 
         //Program Slier
         var swiper = new Swiper('.program-item-wrapper', {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 30,
             loop: true,
             autoplay: {
-                delay: 5000,
+                delay: 3000,
                 disableOnInteraction: true,
             },
             navigation: {
@@ -263,7 +263,7 @@
             });
         });
 
-        //Progress-bar 
+        //Progress-bar
 
         $(function () {
             $('.progress-bar-wrapper').each(function () {
@@ -359,8 +359,8 @@
         }, 2000);
 
     });
-    
-    
+
+
     //Countdown js initialization
     document.addEventListener('readystatechange', event => {
         if (event.target.readyState === "complete") {

@@ -3,31 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $categories = Category::all();
         return view('dashboard.categories.index',compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('dashboard.categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -54,15 +48,14 @@ class CategoryController extends Controller
         }
 
         abort(500);
-
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Category $category)
     {
-        //
+        $categories = Category::where('published',1);
+        $tags = Tag::where('published',1);
+        return view('category',compact('category','categories','tags'));
     }
 
     /**
@@ -110,6 +103,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+
+        if(count($category->posts)) {
+            return redirect()->to('dashboard/categories')->with('failed','You Can\'t Delete Category It Has A Posts.');
+        }
+
         if($category->delete()) {
             return redirect()->to('dashboard/categories')->with('success','Category Deleted Successfully');
         }
