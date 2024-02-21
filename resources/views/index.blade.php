@@ -104,49 +104,50 @@
 @endif
 
 
-<!-- Program section start Here -->
+<!-- Categories post start Here -->
+@foreach($categories as $category)
+<div class="upcoming-programs my-4">
+    <div class="container">
 
-<div class="categories">
-
-        <div class="upcoming-programs mb-5">
-        <div class="container">
-
-                    <div class="programs-item-part">
-                        <div class="program-desc d-flex justify-content-between mb-2">
-                            <h2>التصنيفات</h2>
-                            <ul class="lab-ul">
-                                <li><a href="#" class="program-next bg-transparent text-dark border border-black"><i class="icofont-arrow-right"></i></a></li>
-                                <li><a href="#" class="program-prev bg-transparent text-dark border border-black"><i class="icofont-arrow-left"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="program-item-container">
-                            <div class="program-item-container">
-                                <div class="program-item-wrapper">
-                                    <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="program-item">
-                                                    <div class="lab-inner">
-                                                        <div class="lab-thumb">
-                                                            <a href="#">
-                                                                <img src="{{asset('storage/' . $post->thumbnail())}}" alt="event-image" style="height: 250px;object-fit: cover">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-3">
-                                                            <i class="icofont-calendar"></i>
-                                                            <span>{{date_format($post->created_at,'d-m-Y')}}</span>
-                                                            <h5 class="mt-3"><a href="#">ملاء السماؤ</a> </h5>
-                                                        </div>
-                                                    </div>
+                <div class="programs-item-part">
+                    <div class="program-desc d-flex justify-content-between">
+                        <h3>{{$category->title()}}</h3>
+                        <ul class="lab-ul">
+                            <li><a href="#" class="program-next"><i class="icofont-arrow-right"></i></a></li>
+                            <li><a href="#" class="program-prev"><i class="icofont-arrow-left"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="program-item-container">
+                        <div class="program-item-wrapper">
+                            <div class="swiper-wrapper">
+                                @foreach($category->posts->take(5) as $post)
+                                    <div class="swiper-slide">
+                                        <div class="program-item shadow-sm">
+                                            <div class="lab-inner">
+                                                <div class="lab-thumb">
+                                                    <a href="#">
+                                                        <img src="{{asset('storage/' . $post->thumbnail())}}" alt="program-image">
+                                                    </a>
+                                                </div>
+                                                <div class="lab-content">
+                                                    <h5><a href="#">{{$post->title()}}</a></h5>
                                                 </div>
                                             </div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
+
                             </div>
                         </div>
+
                     </div>
                 </div>
-        </div>
-        <!-- Program section end Here -->
+            </div>
 </div>
+
+@endforeach
+<!-- Categories post section end Here -->
+
+
 
 @endsection

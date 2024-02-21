@@ -9,13 +9,25 @@
     <title>{{__("Title") . ' | '}} @yield('title')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="follow, index">
+    <meta name="description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.">
+    <meta name="title" content="{{__("Title") . ' | '}} @yield('title')">
+    <meta name="theme-color" content="#91E7C8">
+    <meta name="author" content="AMMALE">
+    <meta name="keywords" content="فرنسا,مسجد باريس الكبير,فرنسا,المجلس التنسيقي ,آمال">
+
+    <meta property="og:title" content="{{__("Title") . ' | '}} @yield('title')" />
+    <meta property="og:description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير." />
+    <meta property="og:image" content="{{asset('assets/images/logo/logo-arabic.svg')}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicons/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicons/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicons/favicon-16x16.png')}}">
     <link rel="manifest" href="{{asset('favicons/site.webmanifest')}}">
-
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap{{(\Illuminate\Support\Facades\App::currentLocale() == 'ar' ? '.rtl' : '')}}.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
@@ -138,17 +150,30 @@
                                     <a href="#">{{__('About')}}</a>
                                     <ul class="submenu">
                                         <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">الهوية والرؤية</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about'}}">الأهداف والأدوات</a></li>
-                                        <li><a href="#">الرئيس</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الأهداف والأدوات</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#president'}}">الرئيس</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#members-office'}}">المكتب التنفيذي</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">مجلس الحكماء</a></li>
-                                        <li><a href="#">اللجان الخاصة</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about'}}">مجلس الحكماء</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">اللجان الخاصة</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">{{__('Statements')}}</a></li>
-                                <li><a href="#">الفعاليات</a></li>
-                                <li><a href="#">الأخبار</a></li>
-                                <li><a href="#">الرسالة الدورية</a></li>
+
+                                <li>
+                                <a href="#">{{__('التصنيفات')}}</a>
+                                <ul class="submenu">
+                                    @foreach($categories as $category)
+                                        <li><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/category/' . $category->slug())}}">{{$category->title()}}</a></li>
+                                    @endforeach
+                                </ul>
+                                </li>
+
+{{--                                <li><a href="#">{{__('Statements')}}</a></li>--}}
+
+                                <li><a href="#">إدعمنا</a></li>
+
+{{--                                <li><a href="#">الفعاليات</a></li>--}}
+{{--                                <li><a href="#">الأخبار</a></li>--}}
+{{--                                <li><a href="#">الرسالة الدورية</a></li>--}}
                                 <li><a href="{{'/' . config('app.locale') . '/contact'}}">إتصل بنا</a></li>
                                 <li><a href="#">إدعمنا</a></li>
                                 <li class="me-auto">
@@ -185,9 +210,6 @@
     </div>
 </header>
 <!-- Header Section Ends Here-->
-
-
-
 
 <main>
     @yield('content')
@@ -256,7 +278,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                 <h5>عن آمال</h5>
                             </div>
                             <div class="fm-item-content">
-                                <p class="mb-4">مؤسسة مستقلة مقرها باريس،وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين اجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري في مقر مسجد باريس الكبير</p>
+                                <p class="mb-4">مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.</p>
                             </div>
                         </div>
                     </div>
@@ -272,7 +294,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                     <div class="fm-item-widget lab-item">
                                         <div class="lab-inner">
                                             <div class="lab-thumb">
-                                                <a href="{{url('/ar/post/' . $post->slug())}}"> <img src="{{asset('storage/' . $post->thumbnail())}}"
+                                                <a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/post/'. $post->slug())}}"> <img src="{{asset('storage/' . $post->thumbnail())}}"
                                                                   alt="footer-widget-img" style="height: 100px"></a>
                                             </div>
                                             <div class="lab-content">
@@ -294,7 +316,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                 <div class="widget widget-tags">
                                     <ul class="lab-ul widget-wrapper justify-content-start">
                                         @foreach($categories as $category)
-                                            <li><a href="{{url('category/' . $category->title())}}" class="text-white">{{$category->title() . ' (' . count($category->posts) . ")"}}</a></li>
+                                            <li><a href="{{url('/' . \Illuminate\Support\Facades\App::getLocale() . '/category/' . $category->slug())}}" class="text-white">{{$category->title() . ' (' . count($category->posts) . ")"}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

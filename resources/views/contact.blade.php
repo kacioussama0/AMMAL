@@ -4,13 +4,12 @@
 
 @section('content')
 
-
     <!-- Page Header Section Start Here -->
     <section class="page-header bg_img padding-tb" style="background-image: url('{{asset('assets/images/banner/header-shape.jpg')}}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">تواصلوا معنا</h4>
+                <h2 class="ph-title">تواصلوا معنا</h2>
             </div>
         </div>
     </section>
@@ -20,21 +19,18 @@
     <div class="contact-section">
         <div class="contact-top padding-tb aside-bg padding-b">
             <div class="container">
-                <div class="row">
+                <div class="row mx-5">
                     <div class="col-lg-8">
                         <article class="contact-form-wrapper">
                             <div class="contact-form">
-                                <h4>لا تكن غريبًا، فقط قل مرحبًا.</h4>
-                                <p class="mb-5">نقوم بإصلاح الهاتف بسرعة. في معظم الأحيان لإصلاح جهازك في دقائق معدودة فقط،
-                                    سنفعل
-                                    عادةً ما نحصل على اتصالات، وسنقوم عادةً بذلك.</p>
+                                <h4 class="mb-5">أرسل رسالة</h4>
                                 <form action="#" method="POST" id="commentform" class="comment-form">
                                     <input type="text" name="name" class="" placeholder="الإسم*">
                                     <input type="email" name="email" class="" placeholder="البريد الإلكتروني*">
                                     <textarea name="text" id="role" cols="30" rows="9"
-                                              placeholder="Message*"></textarea>
+                                              placeholder="الرسالة*"></textarea>
                                     <button type="submit" class="lab-btn">
-                                        <span>إرسال رسالة</span>
+                                        <span>إرسال</span>
                                     </button>
                                 </form>
                             </div>

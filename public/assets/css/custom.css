@@ -50,3 +50,29 @@
     top: 50% !important;
     transform: translate(-50%,-50%) !important;
 }
+
+
+@media (min-width: 1200px) {
+    .tri-shape-1::before {
+        background-image: url("../images/logo/logo-sans-write.svg");
+        opacity: .3;
+        background-size: 15%;
+
+    }
+
+    .upcoming-programs::after {
+        width: 100%;
+    }
+}
+
+
+.active>.page-link, .page-link.active {
+    background-color: #081E3F;
+    border-color: #081E3F;
+    color: #fff;
+}
+
+
+.page-link {
+   color: #081E3F;
+}

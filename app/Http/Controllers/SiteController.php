@@ -27,16 +27,19 @@ class SiteController extends Controller
        return view('about');
    }
 
-   public function category($slug)
+   public function category($lang,$slug)
    {
+
        $category = Category::where('slug','=',$slug)->first();
+
 
        if(empty($category)) abort(404);
 
        $categories = Category::where('published',1)->latest()->get();
        $tags = Tag::where('is_published',1)->latest()->get();
+       $posts = Post::where('category_id','=',$category->id)->paginate(10);
 
-       return view('category',compact('category','categories','tags'));
+       return view('category',compact('category','categories','tags','posts'));
 
    }
 

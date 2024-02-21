@@ -3,11 +3,11 @@
 @section('content')
 
     <!-- Page Header Section Start Here -->
-    <section class="page-header bg_img padding-tb">
+    <section class="page-header bg_img padding-tb" style="background-image: url({{asset('assets/images/banner/header-shape.jpg')}})">
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">{{$category->title}}</h4>
+                <h2 class="ph-title">{{$category->title}}</h2>
             </div>
         </div>
     </section>
@@ -21,53 +21,32 @@
                     <div class="col-lg-8 col-12">
                         <article>
 
-                            @foreach($category->posts as $post)
+                            @foreach($posts as $post)
                                 <div class="post-item-2">
                                     <div class="post-inner">
                                         <div class="post-thumb">
                                             <a href="blog-single.html">
-                                                <img src="{{asset('storage/' . $post->thumbnail)}}" alt="blog" style="height: 400px;object-fit: cover">
+                                                <img src="{{asset('storage/' . $post->thumbnail())}}" alt="blog" style="height: 400px;object-fit: cover">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <a href="blog-single.html">
-                                                <h3>{{$post->title}}</h3>
+                                                <h3>{{$post->title()}}</h3>
                                             </a>
                                             <ul class="lab-ul post-date">
                                                 <li><span><i class="icofont-ui-calendar"></i> {{date_format($post->created_at,'d-m-Y')}}
 												</span></li>
                                                 </li>
                                             </ul>
-                                            <p>It’s no secret that the digital industry is booming. from exciting startups
-                                                to global brands, to the new companies are reachin boomingesagencies,
-                                                responding to the new psblites available. however, the industry is
-                                                exciting fast becoming overcr.</p>
-                                            <a href="#" class="lab-btn">قراءة المزيد</a>
+                                            <a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/post/' . $post->slug())}}" class="lab-btn">قراءة المزيد</a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
 
-
-                            <div class="paginations">
-                                <ul class="lab-ul d-flex flex-wrap justify-content-center mb-1">
-                                    <li>
-                                        <a href="#"><i class="icofont-rounded-double-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">2</a>
-                                    </li>
-                                    <li class="d-none d-sm-block">
-                                        <a href="#">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icofont-rounded-double-left"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    {{ $posts->links() }}
+                                </div>
                         </article>
                     </div>
                     <div class="col-lg-4 col-md-7 col-12">
@@ -89,8 +68,8 @@
                                 <ul class="lab-ul widget-wrapper list-bg-none">
                                     @foreach($categories as $category)
                                         <li>
-                                            <a href="{{url('category/' . $category->slug)}}" class="d-flex flex-wrap justify-content-between"><span><i
-                                                        class="icofont-rounded-double-right"></i>{{$category->title}}
+                                            <a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/category/' . $category->slug())}}" class="d-flex flex-wrap justify-content-between"><span><i
+                                                        class="icofont-rounded-double-right"></i>{{$category->title()}}
 												</span><span>{{count($category->posts)}}</span></a>
                                         </li>
                                     @endforeach

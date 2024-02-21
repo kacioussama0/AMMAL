@@ -22,7 +22,7 @@
     <div class=" container">
         <div class="account-wrapper">
             <h3 class="title">سجل الدخول</h3>
-            <img src="{{asset('assets/images/logo/logo.png')}}" alt="ammale" width="150" class="mb-3 d-block mx-auto">
+            <img src="{{asset('assets/images/logo/logo-arabic.svg')}}" alt="ammale" width="150" class="mb-3 d-block mx-auto">
             <form class="account-form">
                 <div class="form-group">
                     <input type="text" placeholder="الإسم" name="username">
