@@ -7,7 +7,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h2 class="ph-title">{{$category->title}}</h2>
+                <h1 class="ph-title">{{$category->title}}</h1>
             </div>
         </div>
     </section>

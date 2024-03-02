@@ -12,7 +12,7 @@
     <meta name="robots" content="follow, index">
     <meta name="description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.">
     <meta name="title" content="{{__("Title") . ' | '}} @yield('title')">
-    <meta name="theme-color" content="#91E7C8">
+    <meta name="theme-color" content="#1D1E19">
     <meta name="author" content="AMMALE">
     <meta name="keywords" content="فرنسا,مسجد باريس الكبير,فرنسا,المجلس التنسيقي ,آمال">
 
@@ -21,7 +21,6 @@
     <meta property="og:image" content="{{asset('assets/images/logo/logo-arabic.svg')}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_SA" />
-
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicons/apple-touch-icon.png')}}">
@@ -47,14 +46,14 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header ">
-                <h1 class="modal-title fs-5" id="search">{{__('home.search')}}</h1>
+                <h1 class="modal-title fs-5" id="search">{{__('البحث')}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="" method="GET" class="d-flex" role="search">
 
-                    <input class="form-control me-2" name="result" type="search" placeholder="" aria-label="Search">
-                    <button class="lab-btn btn-sm" type="submit">{{__('home.search')}}</button>
+                    <input class="me-2 form-control" name="result" type="search" placeholder="" aria-label="Search">
+                    <button class="btn lab-btn" type="submit">{{__('إبحث')}}</button>
                 </form>
             </div>
 
@@ -79,7 +78,7 @@
 
 
 <!-- Header Section Starts Here -->
-<header class="header-3 pattern-1 shadow">
+<header class="header-3 pattern-1">
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-xl-3 col-12">
@@ -92,7 +91,7 @@
                     <div class="logo my-2">
                         <a href="{{url('/') . config('app.locale')}}">
                             @if(config('app.locale') == 'ar')
-                                <img src="{{asset('assets/images/logo/logo-arabic.svg')}}" alt="logo" style="width: 100px">
+                                <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" alt="logo" style="width: 100px">
                             @elseif(config('app.locale') == 'fr')
                                 <img src="{{asset('assets/images/logo/logo-french.svg')}}" alt="logo" style="width: 100px">
                             @else
@@ -106,38 +105,47 @@
                 </div>
             </div>
             <div class="col-xl-9 col-12">
-{{--                <div class="header-top">--}}
-{{--                    <div class="header-top-area">--}}
-{{--                        <ul class="left lab-ul">--}}
-{{--                            <li>--}}
-{{--                                <i class="icofont-ui-call"></i> <span>+33 23 339 702 520</span>--}}
-{{--                            </li>--}}
+                <div class="header-top">
+                    <div class="header-top-area">
+                        <ul class="left lab-ul ms-4">
+                                <li>المجلس التنسيقي آمال | تحالف المساجد والهيئات والقيادات الإسلامية في أوروبا</li>
 {{--                            <li>--}}
 {{--                                <i class="fas fa-map-marker-alt"></i> Place du Puits de l’Ermite, 75005 Paris--}}
 
 {{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                        <ul class="social-icons lab-ul d-flex">--}}
+                        </ul>
+                        <ul class="social-icons lab-ul d-flex">
 
-{{--                            <li>--}}
-{{--                                <a href="#"><i class="fab fa-facebook-f"></i></a>--}}
-{{--                            </li>--}}
 
-{{--                            <li>--}}
-{{--                                <a href="#"><i class="fab fa-youtube"></i></a>--}}
-{{--                            </li>--}}
 
-{{--                            <li>--}}
-{{--                                <a href="#"><i class="fab fa-twitter"></i></a>--}}
-{{--                            </li>--}}
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61556831672417"><i class="fab fa-facebook-f"></i></a>
+                            </li>
 
-{{--                            <li>--}}
-{{--                                <a href="#"><i class="fab fa-instagram"></i></a>--}}
-{{--                            </li>--}}
 
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                            <li>
+                                <a href="https://www.youtube.com/channel/UC83q7f_sCcy_MZLzqiBzKzA"><i class="fab fa-youtube"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="https://twitter.com/ammale4929642"><i class="fab fa-twitter"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.instagram.com/ammale710/"><i class="fab fa-instagram"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.linkedin.com/company/102645340/"><i class="fab fa-linkedin"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.tiktok.com/@ammale.coordinati"><i class="fab fa-tiktok fa-2x"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
                 <div class="header-bottom mb-0">
                     <div class="header-wrapper">
                         <div class="menu-area justify-content-between w-100">
@@ -149,12 +157,14 @@
                                 <li>
                                     <a href="#">{{__('About')}}</a>
                                     <ul class="submenu">
-                                        <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">الهوية والرؤية</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الأهداف والأدوات</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">من نحن</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرؤية</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرسالة</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الأهداف</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#president'}}">الرئيس</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#members-office'}}">المكتب التنفيذي</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about'}}">مجلس الحكماء</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">اللجان الخاصة</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">اللجان</a></li>
                                     </ul>
                                 </li>
 
@@ -169,13 +179,14 @@
 
 {{--                                <li><a href="#">{{__('Statements')}}</a></li>--}}
 
-                                <li><a href="#">إدعمنا</a></li>
 
 {{--                                <li><a href="#">الفعاليات</a></li>--}}
 {{--                                <li><a href="#">الأخبار</a></li>--}}
 {{--                                <li><a href="#">الرسالة الدورية</a></li>--}}
                                 <li><a href="{{'/' . config('app.locale') . '/contact'}}">إتصل بنا</a></li>
+
                                 <li><a href="#">إدعمنا</a></li>
+
                                 <li class="me-auto">
                                     @if(\Illuminate\Support\Facades\App::getLocale() == "fr")
                                         <li><a href="{{url('/fr')}}">Français</a>
@@ -211,6 +222,8 @@
 </header>
 <!-- Header Section Ends Here-->
 
+
+
 <main>
     @yield('content')
 </main>
@@ -235,7 +248,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                                 <img src="{{asset('assets/images/footer/footer-top/01.png')}}" alt="Phone-icon">
                             </div>
                             <div class="lab-content">
-                                <span>+33 23 339 702 520</span>
+                                <span dir="ltr">+33 23 339 702 520</span>
                             </div>
                         </div>
                     </div>

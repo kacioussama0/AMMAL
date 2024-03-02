@@ -9,7 +9,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h2 class="ph-title">تواصلوا معنا</h2>
+                <h1 class="ph-title">تواصلوا معنا</h1>
             </div>
         </div>
     </section>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="contact-info-details">
                                             <span class="fw-bold">رقم التليفون</span>
-                                            <p>+33 23 339 702 520</p>
+                                            <p dir="ltr" class="text-start">+33 23 339 702 520</p>
                                         </div>
                                     </div>
                                 </div>
