@@ -67,7 +67,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="header-title">
-                    <h2 class=" my-5">أخر المقالات</h2>
+                    <h2 class=" my-5">{{__('LatestPosts')}}</h2>
                 </div>
             </div>
             <div class="col-12">

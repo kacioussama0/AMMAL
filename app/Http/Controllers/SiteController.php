@@ -24,12 +24,14 @@ class SiteController extends Controller
 
    public function about($lang)
    {
+       App::setLocale($lang);
        return view('about');
    }
 
    public function category($lang,$slug)
    {
 
+       App::setLocale($lang);
        $category = Category::where('slug','=',$slug)->first();
 
 
@@ -45,6 +47,7 @@ class SiteController extends Controller
 
    public function post($lang,$slug)
    {
+       App::setLocale($lang);
        $categories = Category::where('published',1)->latest()->get();
        $tags = Tag::where('is_published',1)->latest()->get();
 

@@ -90,13 +90,7 @@
                     </div>
                     <div class="logo my-2">
                         <a href="{{url('/') . config('app.locale')}}">
-                            @if(config('app.locale') == 'ar')
-                                <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" alt="logo" style="width: 100px">
-                            @elseif(config('app.locale') == 'fr')
-                                <img src="{{asset('assets/images/logo/logo-french.svg')}}" alt="logo" style="width: 100px">
-                            @else
-                                <img src="{{asset('assets/images/logo/logo-english.svg')}}" alt="logo" style="width: 100px">
-                            @endif
+                            <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" alt="logo" style="width: 100px">
                         </a>
                     </div>
                     <div class="ellepsis-bar d-lg-none">
@@ -108,7 +102,14 @@
                 <div class="header-top">
                     <div class="header-top-area">
                         <ul class="left lab-ul ms-4">
+                            @if(config('app.locale') == 'fr')
+                                <li>Alliance des Mosquées, Associations et Leaders Musulmans en Europe</li>
+                            @elseif(config('app.locale') == 'en')
                                 <li>المجلس التنسيقي آمال | تحالف المساجد والهيئات والقيادات الإسلامية في أوروبا</li>
+                            @elseif(config('app.locale') == 'ar')
+                                <li>المجلس التنسيقي آمال | تحالف المساجد والهيئات والقيادات الإسلامية في أوروبا</li>
+                            @endif
+
 {{--                            <li>--}}
 {{--                                <i class="fas fa-map-marker-alt"></i> Place du Puits de l’Ermite, 75005 Paris--}}
 
@@ -157,7 +158,7 @@
                                 <li>
                                     <a href="#">{{__('About')}}</a>
                                     <ul class="submenu">
-                                        <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">من نحن</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">{{__('WhoWeAre')}}</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرؤية</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرسالة</a></li>
                                         <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الأهداف</a></li>
@@ -169,7 +170,7 @@
                                 </li>
 
                                 <li>
-                                <a href="#">{{__('التصنيفات')}}</a>
+                                <a href="#">{{__('Categories')}}</a>
                                 <ul class="submenu">
                                     @foreach($categories as $category)
                                         <li><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/category/' . $category->slug())}}">{{$category->title()}}</a></li>
@@ -183,9 +184,9 @@
 {{--                                <li><a href="#">الفعاليات</a></li>--}}
 {{--                                <li><a href="#">الأخبار</a></li>--}}
 {{--                                <li><a href="#">الرسالة الدورية</a></li>--}}
-                                <li><a href="{{'/' . config('app.locale') . '/contact'}}">إتصل بنا</a></li>
+                                <li><a href="{{'/' . config('app.locale') . '/contact'}}">{{__('Contact')}}</a></li>
 
-                                <li><a href="#">إدعمنا</a></li>
+                                <li><a href="#">{{__('Support')}}</a></li>
 
                                 <li class="me-auto">
                                     @if(\Illuminate\Support\Facades\App::getLocale() == "fr")
@@ -288,10 +289,18 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                     <div class="footer-middle-item-wrapper">
                         <div class="footer-middle-item mb-5 mb-lg-0">
                             <div class="fm-item-title">
-                                <h5>عن آمال</h5>
+                                <h5>{{__('About')}}</h5>
                             </div>
                             <div class="fm-item-content">
-                                <p class="mb-4">مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.</p>
+                                @if(config('app.locale') == 'fr')
+                                    <p class="mb-4">AMMALE est une association indépendante dont le siège principal est à Paris, elle disposera de filiales dans certains pays européens, à commencer par la capitale Bruxelles.
+                                        Elle a été lancée par des individus et des représentants d’institutions islamiques, venant de 17 pays européens, réunis lors de l'Assemblée Constituante tenue le samedi 7 octobre 2023, au siège de la Grande Mosquée de Paris.
+                                        Elle a été agréée par les autorités françaises le 17 novembre 2023, 11 jours après la deuxième session de l'Assemblée constituante.
+                                    </p>
+                                @else
+                                    <p class="mb-4">مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير،قادمين من 17 دولة أوروبية.تم اعتمادها من قبل السلطات الفرنسية في 17 نوفمبر 2023،بعد انعقاد الجلسة الثانية للجمعية العامة التأسيسية في السادس من نفس الشهر.</p>
+                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -300,7 +309,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                     <div class="footer-middle-item-wrapper">
                         <div class="footer-middle-item mb-5 mb-lg-0">
                             <div class="fm-item-title">
-                                <h5>أخر الأخبار</h5>
+                                <h5>{{__('LatestPosts')}}</h5>
                             </div>
                             <div class="fm-item-content">
                                 @foreach($footerPosts as $post)
@@ -325,7 +334,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                     <div class="footer-middle-item-wrapper">
                         <div class="footer-middle-item-3 mb-5 mb-lg-0">
                             <div class="fm-item-title">
-                                <h5>التصنيفات</h5>
+                                <h5>{{__('Categories')}}</h5>
                                 <div class="widget widget-tags">
                                     <ul class="lab-ul widget-wrapper justify-content-start">
                                         @foreach($categories as $category)
@@ -352,7 +361,7 @@ $footerPosts = \App\Models\Post::latest()->get()->take(2);
                 <div class="col-12">
                     <div class="footer-bottom-content text-center  my-0 py-4">
                         <img src="{{asset('assets/images/logo/logo-sans-write.svg')}}" class="mb-3" alt="logo" style="width: 120px">
-                        <p>كل الحقوق محفوظة المجلس التنسيقي آمال &copy; 2024</p>
+                        <p>{{__('Title') . ' ' . __('All rights reserved.')}} &copy; 2024</p>
                     </div>
                 </div>
             </div>

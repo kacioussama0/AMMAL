@@ -8,7 +8,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h1 class="ph-title">عن آمال</h1>
+                <h1 class="ph-title">{{__('About')}}</h1>
             </div>
         </div>
     </section>
@@ -21,73 +21,116 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            من نحن
+                            {{__('WhoWeAre')}}
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير،قادمين من 17 دولة أوروبية.تم اعتمادها من قبل السلطات الفرنسية في 17 نوفمبر 2023،بعد انعقاد الجلسة الثانية للجمعية العامة التأسيسية في السادس من نفس الشهر.</p>
+                            @if(config('app.locale') == 'fr')
+                                <p>AMMALE est une association indépendante dont le siège principal est à Paris, elle disposera de filiales dans certains pays européens, à commencer par la capitale Bruxelles.
+                                    Elle a été lancée par des individus et des représentants d’institutions islamiques, venant de 17 pays européens, réunis lors de l'Assemblée Constituante tenue le samedi 7 octobre 2023, au siège de la Grande Mosquée de Paris.
+                                    Elle a été agréée par les autorités françaises le 17 novembre 2023, 11 jours après la deuxième session de l'Assemblée constituante.
+                                </p>
+                            @else
+                                <p>مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير،قادمين من 17 دولة أوروبية.تم اعتمادها من قبل السلطات الفرنسية في 17 نوفمبر 2023،بعد انعقاد الجلسة الثانية للجمعية العامة التأسيسية في السادس من نفس الشهر.</p>
+                            @endif
+
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            الرؤية
+                            {{__('Vision')}}
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>التميز في خدمة المراكز الإسلامية للارتقاء بها وتطوير أداءها.</p>
+
+                            @if(config('app.locale') == 'fr')
+                                <p>Excellence au service des centres islamiques pour les faire progresser et développer leurs performances.</p>
+                            @else
+                                <p>التميز في خدمة المراكز الإسلامية للارتقاء بها وتطوير أداءها.</p>
+                            @endif
+
+
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
-                            الرسالة
+                            {{__('Message')}}
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>الارتقاء بدور المراكز الإسلامية في أوروبا، وتطوير وسائلها، وتوسيع نطاق أعمالها، لتستجيب لحاجات وتطلعات مسلمي أوروبا، وللقيام بدور ريادي ضمن مؤسسات المجتمع المدني الأوروبي.</p>
+
+
+                            @if(config('app.locale') == 'fr')
+                                <p>Renforcer le rôle des centres islamiques en Europe, développer leurs moyens et élargir la portée de leur travail, pour répondre aux besoins et aux aspirations des musulmans européens et jouer un rôle de pionnier au sein des institutions de la société civile européenne.</p>
+                            @else
+                                <p>الارتقاء بدور المراكز الإسلامية في أوروبا، وتطوير وسائلها، وتوسيع نطاق أعمالها، لتستجيب لحاجات وتطلعات مسلمي أوروبا، وللقيام بدور ريادي ضمن مؤسسات المجتمع المدني الأوروبي.</p>
+                            @endif
+
+
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
-                            الأهداف
+                            {{__('Goals')}}
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <ol class="lh-lg">
-                                <li>جمع كلمة الكفاءات المسلمة والمؤسسات الإسلامية والثقافية والفكرية للمسلمين في أوروبا، وتقريب رؤيتها حول القضايا التي يهتم بها المجلس.</li>
-                                <li>متابعة الشؤون الإسلامية العامة، وشؤون الأقليات المسلمة، والدفاع عن كرامة المسلمين وحقوقهم المعنوية والمادية، بجميع الوسائل القانونية والمشروعة.</li>
-                                <li>تعزيز الحوار والتعايش بين أتباع الأديان والثقافات في أوروبا، بما يضمن المحافظة على الهوية الإسلامية.</li>
-                                <li>تعزيز الإندماج الإيجابي ، وقيم المواطنة الصالحة.</li>
-                                <li>تعزيز وسائل التعريف بالإسلام ووسطيته السمحة وقيمه الإنسانية العالمية.</li>
-                                <li>تعزيز التواصل والحوار والتنسيق والتعاون بين المؤسسات الإسلامية بعضها ببعض ومع الهيئات الرسمية والمدنية العامة.</li>
-                                <li>إنشاء وتطوير أدوات وموارد وقفية لدعم بناء المساجد والمراكز والمؤسسات الإسلامية في أوروبا،وتشغيلها وصيانتها وتدريب منسوبيتها وتطوير كفاءتهم.</li>
-                                <li>المحافظة عىل الأوقاف الإسلامية القديمة والحديثة و دعمها و صيانتها و تعزيز وسائل الانتفاع بها .</li>
-                                <li>تعزيز المنهج الوسطي للإسلام الحنيف في أوروبا.</li>
-                                <li>مواجهة مظاهر الغلو والتطرف الفكري وتصحيحها بالوسائل الممكنة.</li>
-                                <li>رصد مظاهر الإسلاموفوبيا والأعمال المعادية للمسلمين وجميع مظاهر التعصب والتمييز والعنصرية، والإسهام في مكافحتها قانونيا وميدانيا وبالوسائل الممكنة والنظامية.</li>
-                                <li>رصد المعلومات والتقارير والمناشط والأحصاءات حول الإسلام والمسلمين في أوروبا.</li>
-                                <li>.العمل على تلبية إحتياجات المسلمين في أوروبا لممارسة عباداتهم وشعائرهم ومعاملاتهم الدينية على الوجه الشرعي.</li>
-                                <li>تعزيز برامج تعليم اللغة العربية والتربية الإسلامية والقرآن الكريم.</li>
-                                <li>الإسهام في تعزيز مشاركة المسلمين الإيجابية في الحياة السياسية والإقتصادية والإجتماعية والثقافية المقبولة في الدول الأوروبية.</li>
-                                <li>تطوير منصات حوار شفاف وبناء مع جميع مكونات المجتمع الأوروبي بما يخدم مصالح الأقليات الإسلامية.</li>
-                                <li>تأسيس المؤسسات والهيئات والجمعيات لخدمة المسلمين والمجتمع في أوروبا في المجالات العلمية والفكرية والإجتماعية والثقافية،والتربوية،والإعلامية،وغيرها.</li>
-                            </ol>
+                            @if(config('app.locale') == 'fr')
+                                <ol class="lh-lg">
+                                    <li>Unifier la parole des compétences musulmanes et des institutions islamiques culturelles et intellectuelles en Europe, rapprocher leurs visions autour des questions d’intérêt pour le Conseil.</li>
+                                    <li>Suivre les affaires islamiques en général et les affaires des minorités musulmanes, défendre la dignité des musulmans et leurs droits moraux et matériels par tous les moyens légaux et licites.</li>
+                                    <li>Renforcer le dialogue et la coexistence entre les adeptes des religions et des cultures en Europe de sorte à garantir la préservation de l’identité musulmane.</li>
+                                    <li>Renforcer l’intégration positive et les valeurs de la citoyenneté.</li>
+                                    <li>Renforcer les moyens de faire connaître l’islam, sa modération tolérante et ses valeurs humaines universelles.</li>
+                                    <li>Renforcer la communication, le dialogue, la coordination et la coopération entre les institutions islamiques et avec les instances officielles et civiles publiques.</li>
+                                    <li>Renforcer l’approche médiane de l’Islam en Europe.</li>
+                                    <li>Faire face aux manifestations du fanatisme et de l’extrémisme intellectuel et les corriger par les moyens possibles.</li>
+                                    <li>Recenser les manifestations de l’islamophobie et les actes anti–musulmans ainsi que toutes les manifestations d’intolérance, de discrimination et de racisme et contribuer à les combattre légalement et sur le terrain par les moyens règlementaires possibles.</li>
+                                    <li>Collecter les informations, les rapports, les évènements et les statistiques sur l’islam et les musulmans en Europe.</li>
+                                    <li>Œuvrer à satisfaire les besoins des musulmans en Europe pour l’exercice de leur culte, leurs rites et leurs activités religieuses de manière légale.</li>
+                                    <li>Renforcer les programmes d’enseignement de la langue arabe, de l’éducation islamique et du Saint Coran. </li>
+                                    <li>Développer des plateformes de dialogue transparent et constructif avec toutes les composantes de la société européenne à même de servir l’intérêt des minorités musulmanes.</li>
+                                    <li>Création d’institutions, organisations et associations au service des musulmans et de la société en Europe dans les domaines scientifique, intellectuel, socioculturel, éducatif et médiatique et autres.</li>
+                                </ol>
+                            @else
+                                <ol class="lh-lg">
+                                    <li>جمع كلمة الكفاءات المسلمة والمؤسسات الإسلامية والثقافية والفكرية للمسلمين في أوروبا، وتقريب رؤيتها حول القضايا التي يهتم بها المجلس.</li>
+                                    <li>متابعة الشؤون الإسلامية العامة، وشؤون الأقليات المسلمة، والدفاع عن كرامة المسلمين وحقوقهم المعنوية والمادية، بجميع الوسائل القانونية والمشروعة.</li>
+                                    <li>تعزيز الحوار والتعايش بين أتباع الأديان والثقافات في أوروبا، بما يضمن المحافظة على الهوية الإسلامية.</li>
+                                    <li>تعزيز الإندماج الإيجابي ، وقيم المواطنة الصالحة.</li>
+                                    <li>تعزيز وسائل التعريف بالإسلام ووسطيته السمحة وقيمه الإنسانية العالمية.</li>
+                                    <li>تعزيز التواصل والحوار والتنسيق والتعاون بين المؤسسات الإسلامية بعضها ببعض ومع الهيئات الرسمية والمدنية العامة.</li>
+                                    <li>إنشاء وتطوير أدوات وموارد وقفية لدعم بناء المساجد والمراكز والمؤسسات الإسلامية في أوروبا،وتشغيلها وصيانتها وتدريب منسوبيتها وتطوير كفاءتهم.</li>
+                                    <li>المحافظة عىل الأوقاف الإسلامية القديمة والحديثة و دعمها و صيانتها و تعزيز وسائل الانتفاع بها .</li>
+                                    <li>تعزيز المنهج الوسطي للإسلام الحنيف في أوروبا.</li>
+                                    <li>مواجهة مظاهر الغلو والتطرف الفكري وتصحيحها بالوسائل الممكنة.</li>
+                                    <li>رصد مظاهر الإسلاموفوبيا والأعمال المعادية للمسلمين وجميع مظاهر التعصب والتمييز والعنصرية، والإسهام في مكافحتها قانونيا وميدانيا وبالوسائل الممكنة والنظامية.</li>
+                                    <li>رصد المعلومات والتقارير والمناشط والأحصاءات حول الإسلام والمسلمين في أوروبا.</li>
+                                    <li>.العمل على تلبية إحتياجات المسلمين في أوروبا لممارسة عباداتهم وشعائرهم ومعاملاتهم الدينية على الوجه الشرعي.</li>
+                                    <li>تعزيز برامج تعليم اللغة العربية والتربية الإسلامية والقرآن الكريم.</li>
+                                    <li>الإسهام في تعزيز مشاركة المسلمين الإيجابية في الحياة السياسية والإقتصادية والإجتماعية والثقافية المقبولة في الدول الأوروبية.</li>
+                                    <li>تطوير منصات حوار شفاف وبناء مع جميع مكونات المجتمع الأوروبي بما يخدم مصالح الأقليات الإسلامية.</li>
+                                    <li>تأسيس المؤسسات والهيئات والجمعيات لخدمة المسلمين والمجتمع في أوروبا في المجالات العلمية والفكرية والإجتماعية والثقافية،والتربوية،والإعلامية،وغيرها.</li>
+                                </ol>
+                            @endif
+
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
-                            الوسائل
+                            {{__('Methods')}}
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -550,11 +593,11 @@
                                         ["name" => "شمس الدين محمد حفيز","occupation" => "الرئيس","image" => "hafiz.jpg"],
                                         ["name" => "خالد ياسين","occupation" => "نائب الرئيس مكلف بالتواصل مع الهيئات الإسلامية","image" => "yassin.jpg"],
                                         ["name" => "أحمد بن سعد آل مفرح","occupation" => "نائب الرئيس مكلف بالتواصل مع النخب الأوروبية","image" => "ahmad-mfrah.jpg"],
-                                        ["name" => "عبد الصمد اليزيدي","occupation" => "نائب الرئيس مكلف بالحوار الديني والإنساني","image" => "yazidi.webp"],
+                                        ["name" => "عبد الصمد اليزيدي","occupation" => "نائب الرئيس مكلف بالحوار الديني والإنساني","image" => "yazidi.jpg"],
                                         ["name" => "حسان موسى","occupation" => "نائب الرئيس مكلف بالتواصل مع المسلمين","image" => "hassan.jpg"],
-                                        ["name" => "فريد حناش","occupation" => "الأمين العام","image" => "hanach.jpeg"],
+                                        ["name" => "فريد حناش","occupation" => "الأمين العام","image" => "hanach.jpg"],
                                         ["name" => "فايد محمد السعيد","occupation" => "نائب الأمين العام","image" => "faid.webp"],
-                                        ["name" => "نصرت رمضان","occupation" => "نائب الأمين العام","image" => "ramadan.jpeg"],
+                                        ["name" => "نصرت رمضان","occupation" => "نائب الأمين العام","image" => "ramadan.jpg"],
                                         ["name" => "محمد الونوغي","occupation" => "أمين الصندوق","image" => "wanoghi.jpeg"],
                                         ["name" => "أحمد تميم","occupation" => "مستشار المكتب","image" => "ahmad-tamim.jpg"],
                                         ["name" => "نفيع الله عشيورف","occupation" => "مستشار المكتب","image" => "achirof.jpeg"],
