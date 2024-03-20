@@ -39,7 +39,7 @@ class SiteController extends Controller
 
        App::setLocale($lang);
 
-       $category = Category::where('slug','=',$slug)->first();
+       $category = Category::where('slug','=',$slug)->orWhere("slug_" . ($lang == 'ar' ? "fr" : $lang)  , $slug)->first();
 
 
        if(empty($category)) abort(404);
