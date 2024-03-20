@@ -58,7 +58,9 @@ class SiteController extends Controller
        $categories = Category::where('published',1)->latest()->get();
        $tags = Tag::where('is_published',1)->latest()->get();
 
-       $post = Post::where('slug',$slug)->whereOr("slug_" . $lang , $slug)->first();
+       $post = Post::where('slug',$slug)->orWhere("slug_" . $lang , $slug)->first();
+
+       if(!$post) abort(404);
 
        return view('post',compact('categories','tags','post'));
    }
