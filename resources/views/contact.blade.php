@@ -9,7 +9,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h1 class="ph-title">تواصلوا معنا</h1>
+                <h1 class="ph-title">{{__('Contact')}}</h1>
             </div>
         </div>
     </section>
@@ -23,14 +23,14 @@
                     <div class="col-lg-8">
                         <article class="contact-form-wrapper">
                             <div class="contact-form">
-                                <h4 class="mb-5">أرسل رسالة</h4>
+                                <h4 class="mb-5">{{__("Send Message")}}</h4>
                                 <form action="#" method="POST" id="commentform" class="comment-form">
-                                    <input type="text" name="name" class="" placeholder="الإسم*">
-                                    <input type="email" name="email" class="" placeholder="البريد الإلكتروني*">
+                                    <input type="text" name="name" class="" placeholder="{{__("Name")}}*">
+                                    <input type="email" name="email" class="" placeholder="{{__("Email")}}*">
                                     <textarea name="text" id="role" cols="30" rows="9"
-                                              placeholder="الرسالة*"></textarea>
+                                              placeholder="{{__("Message")}}*"></textarea>
                                     <button type="submit" class="lab-btn">
-                                        <span>إرسال</span>
+                                        <span>{{__("Send")}}</span>
                                     </button>
                                 </form>
                             </div>
@@ -39,9 +39,8 @@
                     <div class="col-lg-4">
                         <div class="contact-info-wrapper">
                             <div class="contact-info-title">
-                                <h5>احصل على المعلومات</h5>
-                                <p>تفاصيل معلومات الاتصال الخاصة بنا و
-                                    تابعنا على وسائل التواصل الإجتماعي</p>
+                                <h5 class="mb-5">{{__("Get information")}}</h5>
+
                             </div>
                             <div class="contact-info-content">
                                 <div class="contact-info-item">
@@ -50,7 +49,7 @@
                                             <img src="{{asset('assets/images/contact/01.png')}}" alt="address">
                                         </div>
                                         <div class="contact-info-details">
-                                            <span class="fw-bold">عنوان المكتب</span>
+                                            <span class="fw-bold">{{__("Address")}}</span>
                                             <p>Place du Puits de l’Ermite, 75005 Paris</p>
                                         </div>
                                     </div>
@@ -61,8 +60,8 @@
                                             <img src="{{asset('assets/images/contact/02.png')}}" alt="address">
                                         </div>
                                         <div class="contact-info-details">
-                                            <span class="fw-bold">رقم التليفون</span>
-                                            <p dir="ltr" class="text-start">+33 23 339 702 520</p>
+                                            <span class="fw-bold">{{__("Phone")}}</span>
+                                            <p dir="ltr" class="text-start">+33 1 88 61 33 09</p>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +71,7 @@
                                             <img src="{{asset('assets/images/contact/03.png')}}" alt="address">
                                         </div>
                                         <div class="contact-info-details">
-                                            <span class="fw-bold">ارسل بريد</span>
+                                            <span class="fw-bold">{{__("Email")}}</span>
                                             <p>contact@cc-ammale.com</p>
                                         </div>
                                     </div>
@@ -83,7 +82,7 @@
                                             <img src="{{asset('assets/images/contact/04.png')}}" alt="address">
                                         </div>
                                         <div class="contact-info-details">
-                                            <span class="fw-bold">موقعنا</span>
+                                            <span class="fw-bold">{{__("Website")}}</span>
                                             <p>www.cc-ammale.com</p>
                                         </div>
                                     </div>

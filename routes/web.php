@@ -20,7 +20,7 @@ Route::redirect('/','/' . config('app.locale'));
 Route::get('/{lang}',[\App\Http\Controllers\SiteController::class,'home']);
 Route::get('/{lang}/category/{slug}',[\App\Http\Controllers\SiteController::class,'category']);
 Route::get('/{lang}/post/{slug}',[\App\Http\Controllers\SiteController::class,'post']);
-Route::view('/{lang}/contact','contact');
+Route::get('/{lang}/contact',[\App\Http\Controllers\SiteController::class,'contact']);
 Route::get('/{lang}/about',[\App\Http\Controllers\SiteController::class,'about']);
 Route::view('/{lang}/login','login');
 

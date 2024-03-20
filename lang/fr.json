@@ -216,5 +216,15 @@
     "Message": "Message",
     "Goals": "Buts",
     "Methods": "Les Moyens",
+    "President": "Président",
+    "The executive office": "Le bureau exécutif",
+    "The Commission": "La Commission",
+    "Send Message": "Envoyer message",
+    "Name": "Nom",
+    "Website": "Site Web",
+    "Email": "E-mail",
+    "Phone": "Téléphone",
+    "Address": "Adresse",
+    "Get information": "Obtenir des informations",
     "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte."
 }

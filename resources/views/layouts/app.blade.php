@@ -159,13 +159,13 @@
                                     <a href="#">{{__('About')}}</a>
                                     <ul class="submenu">
                                         <li><a href="{{'/' . config('app.locale') . '/about#about-us'}}">{{__('WhoWeAre')}}</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرؤية</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الرسالة</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">الأهداف</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#president'}}">الرئيس</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#members-office'}}">المكتب التنفيذي</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about'}}">مجلس الحكماء</a></li>
-                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">اللجان</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">{{__('Vision')}}</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">{{__('Message')}}</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#goals'}}">{{__('Goals')}}</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#president'}}">{{__('President')}}</a></li>
+                                        <li><a href="{{'/' . config('app.locale') . '/about#members-office'}}">{{__('The executive office')}}</a></li>
+{{--                                        <li><a href="{{'/' . config('app.locale') . '/about'}}">مجلس الحكماء</a></li>--}}
+                                        <li><a href="{{'/' . config('app.locale') . '/about#office-posts'}}">{{__('The Commission')}}</a></li>
                                     </ul>
                                 </li>
 

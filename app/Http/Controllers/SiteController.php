@@ -28,6 +28,12 @@ class SiteController extends Controller
        return view('about');
    }
 
+    public function contact($lang)
+    {
+        App::setLocale($lang);
+        return view('contact');
+    }
+
    public function category($lang,$slug)
    {
 

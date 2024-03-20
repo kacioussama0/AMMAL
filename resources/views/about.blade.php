@@ -18,13 +18,31 @@
     <section class="feature-section padding-tb " id="">
         <div class="container">
             <div class="accordion" id="accordionExample">
+
+                @if(config('app.locale') == 'fr')
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                {{__('Le nom')}}
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <p>L’acronyme « AMMALE » est la traduction en langue anglaise du nom complet détaillé, à savoir l’Alliance des mosquées, associations et leaders musulmans en Europe. La prononciation de l’acronyme se fait en français. Le sens de L’acronyme s’entend en arabe il veut dire espoir !</p>
+
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             {{__('WhoWeAre')}}
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse @if(config('app.locale') == 'fr') collapse @else collapse show @endif " data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             @if(config('app.locale') == 'fr')
                                 <p>AMMALE est une association indépendante dont le siège principal est à Paris, elle disposera de filiales dans certains pays européens, à commencer par la capitale Bruxelles.
@@ -133,7 +151,192 @@
                             {{__('Methods')}}
                         </button>
                     </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    @if(config('app.locale') == 'fr')
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body faith-section">
+                                <div class="faith-content">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="one" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">1</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>La participation à la représentation des musulmans dans toutes les instances officielles et civiles et les évènements publics liés à la religion musulmane et aux affaires des minorités musulmanes, aux débats publics et dans les médias dans le respect total du travail des grandes organisations ou de celles qui représentent les musulmans dans chaque pays et la coordination avec elles.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="two" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">2</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>La participation aux instances de dialogue créées à l’initiative des autorités publiques ou des organisations civiles en Europe.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="three" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">3</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>La participation aux instances de dialogue créées à l’initiative des autorités publiques ou des organisations civiles en Europe.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="four" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">4</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Organisation d’évènements religieux, scientifiques, intellectuels, socioculturels, éducatifs et médiatiques servant les objectifs du Conseil.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="five" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">5</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Mise en place de partenariat de travail et de coopération avec les institutions islamiques internationales, européennes et nationales officielles et civiles pour la formation des imams, des prédicateurs et des leaders musulmans, leur entraînement et leur qualification.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="six" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">6</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Organisation de colloques et d’évènements, de sessions de formation et d’instruction autour de l’islam destinées aux non musulmans, notamment ceux qui activent dans les domaines politique, médiatique, scientifique et au service de la société.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="seven" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">7</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Edition de publications et de matériaux audio-visuels et électroniques qui servent les objectifs du Conseil.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="eight" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">8</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Intenter des actions devant les juridictions européennes sur décision du conseil d’administration, après consultation des spécialistes pour réclamer ou se défendre dans les litiges civils, pénaux ou juridiques concernant tout évènement ou fait influant sur les intérêts moraux et matériels du Conseil de coordination AMMALE ou ses membres ou les minorités musulmanes à l’instar de la lutte contre la discrimination envers les musulmans, le racisme, la xénophobie et toutes les formes d’extrémisme.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="nine" role="tabpanel"
+                                             aria-labelledby="one-tab">
+                                            <div class="lab-item faith-item tri-shape-1 pattern-2">
+                                                <div class="lab-inner d-flex align-items-center">
+                                                    <div class="lab-thumb">
+                                                        <span class="display-1 fw-bolder">9</span>
+                                                    </div>
+                                                    <div class="lab-content">
+                                                        <p>Soutenir tout autre moyen juridique ou institutionnel à même de contribuer à la réalisation de l’objectif visé à travers ce règlement.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="nav nav-pills mb-3 align-items-center justify-content-center" id="pills-tab"
+                                        role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="one-tab" data-bs-toggle="pill" href="#one"
+                                               role="tab" aria-controls="one-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">1</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="two-tab" data-bs-toggle="pill" href="#two"
+                                               role="tab" aria-controls="one-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">2</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="three-tab" data-bs-toggle="pill" href="#three"
+                                               role="tab" aria-controls="three-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">3</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="four-tab" data-bs-toggle="pill" href="#four"
+                                               role="tab" aria-controls="four-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">4</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="five-tab" data-bs-toggle="pill" href="#five"
+                                               role="tab" aria-controls="five-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">5</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="six-tab" data-bs-toggle="pill" href="#six"
+                                               role="tab" aria-controls="six-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">6</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="seven-tab" data-bs-toggle="pill" href="#seven"
+                                               role="tab" aria-controls="seven-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">7</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="eight-tab" data-bs-toggle="pill" href="#eight"
+                                               role="tab" aria-controls="eight-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">8</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="nine-tab" data-bs-toggle="pill" href="#nine"
+                                               role="tab" aria-controls="nine-tab" aria-selected="true">
+                                                <span class="display-6 fw-bolder text-dark">9</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @else
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body faith-section">
                             <div class="faith-content">
                                 <div class="tab-content" id="pills-tabContent">
@@ -328,6 +531,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -548,8 +752,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="header-title">
-                        <h5>الرئيس</h5>
-                        <h2>شمس الدين محمد حفيز</h2>
+                        <h5>{{__('President')}}</h5>
+                        @if(config('app.locale')  == 'fr')
+                            <h2>Chems-Eddine Mohamed Hafiz</h2>
+                        @else
+                            <h2>شمس الدين محمد حفيز</h2>
+                        @endif
                     </div>
                 </div>
                 <div class="col-12 mt-3">
@@ -560,9 +768,16 @@
                             </div>
                             <div class="event-top-content">
                                 <div class="event-top-content-wrapper">
+                                    @if(config('app.locale') == 'fr')
+
+                                            <p>Chams Al-Din Hafid est né en Algérie en 1954. Avant d'immigrer en France, il a participé à la création de l'Union des jeunes avocats algériens. Aujourd'hui, outre ses fonctions de nouveau doyen de la Grande Mosquée de Paris, il exerce depuis 2008 les fonctions de vice-président du Conseil français du culte islamique. Il est avocat de la Grande Mosquée de Paris depuis des décennies.</p>
+                                            <p>Ce que l'on sait de Shams al-Din Hafid, c'est qu'il défend avec force le principe du renforcement des droits des musulmans de France quant à la pratique de leurs rituels religieux dans le cadre du respect des lois et principes de la République française, notamment dont l’important est le principe de laïcité.</p>
+                                            <p>Il est à noter que l'élection de Shams al-Din Hafid au poste de doyen de la Grande Mosquée de Paris intervient quelques jours avant l'élection du président du Conseil français du culte islamique, créé en 2003 pour faciliter les relations entre les Français et les Français. Musulmans auprès des institutions étatiques françaises concernant la pratique des rituels religieux.</p>
+                                    @else
                                     <p>                                        ولد شمس الدين حفيظ في الجزائر عام 1954. وشارك قبل الهجرة إلى فرنسا في تأسيس اتحاد المحامين الجزائريين الشبان. ويتولي اليوم إلى جانب مهامه كعميد جديد لمسجد باريس الكبير مهام نائب رئيس لدى مجلس الديانة الإسلامية الفرنسي وذلك منذ عام 2008. وهو منذ عقود محامي مسجد باريس الكبير.</p>
                                     <p>ومما يُعرف عن شمس الدين حفيظ أنه يدافع بقوة عن مبدأ تعزيز حقوق المسلمين في فرنسا في ما يخص ممارسة شعائرهم الدينية في إطار احترام قوانين الجمهورية الفرنسية ومبادئها ومن أهمها مبدأ العلمانية.</p>
                                     <p>يذكر أن انتخاب شمس الدين حفيظ عميدا لمسجد باريس الكبير يأتي قبل بضعة من انتخاب رئيس مجلس الديانة الإسلامية الفرنسي الذي تأسس عام 2003 لتسهيل علاقة مسلمي فرنسا مع مؤسسات الدولة الفرنسية في ما يخص ممارسة الشعائر الدينية.</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -580,7 +795,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="header-title">
-                        <h2>المكتب التنفيذي</h2>
+                        <h2>{{__('The executive office')}}</h2>
                     </div>
                 </div>
                 <div class="col-12">
@@ -590,19 +805,19 @@
 
                          $members =  [
 
-                                        ["name" => "شمس الدين محمد حفيز","occupation" => "الرئيس","image" => "hafiz.jpg"],
-                                        ["name" => "خالد ياسين","occupation" => "نائب الرئيس مكلف بالتواصل مع الهيئات الإسلامية","image" => "yassin.jpg"],
-                                        ["name" => "أحمد بن سعد آل مفرح","occupation" => "نائب الرئيس مكلف بالتواصل مع النخب الأوروبية","image" => "ahmad-mfrah.jpg"],
-                                        ["name" => "عبد الصمد اليزيدي","occupation" => "نائب الرئيس مكلف بالحوار الديني والإنساني","image" => "yazidi.jpg"],
-                                        ["name" => "حسان موسى","occupation" => "نائب الرئيس مكلف بالتواصل مع المسلمين","image" => "hassan.jpg"],
-                                        ["name" => "فريد حناش","occupation" => "الأمين العام","image" => "hanach.jpg"],
-                                        ["name" => "فايد محمد السعيد","occupation" => "نائب الأمين العام","image" => "faid.webp"],
-                                        ["name" => "نصرت رمضان","occupation" => "نائب الأمين العام","image" => "ramadan.jpg"],
-                                        ["name" => "محمد الونوغي","occupation" => "أمين الصندوق","image" => "wanoghi.jpeg"],
-                                        ["name" => "أحمد تميم","occupation" => "مستشار المكتب","image" => "ahmad-tamim.jpg"],
-                                        ["name" => "نفيع الله عشيورف","occupation" => "مستشار المكتب","image" => "achirof.jpeg"],
-                                        ["name" => "حسام بن صديق خوجة","occupation" => "مستشار المكتب","image" => "khoja.jpg"],
-                                        ["name" => "مهاجري زيان","occupation" => "مستشار المكتب","image" => "ziyan.jpg"],
+                                        ["name_ar" => "شمس الدين محمد حفيز","occupation_ar" => "الرئيس","image" => "hafiz.jpg","name_fr" => "Chems-Eddine Mohamed Hafiz","occupation_fr" => "Président"],
+                                        ["name_ar" => "خالد ياسين","occupation_ar" => "نائب الرئيس مكلف بالتواصل مع الهيئات الإسلامية","image" => "yassin.jpg","name_fr" => "Khaled Yassin","occupation_fr" => "Vice-président chargé des relations avec les instituions islamiques"],
+                                        ["name_ar" => "أحمد بن سعد آل مفرح","occupation_ar" => "نائب الرئيس مكلف بالتواصل مع النخب الأوروبية","image" => "ahmad-mfrah.jpg","name_fr" => "Ahmed Saad Al-Mofareh","occupation_fr" => "Vice-président chargé des relations avec les élites européennes"],
+                                        ["name_ar" => "عبد الصمد اليزيدي","occupation_ar" => "نائب الرئيس مكلف بالحوار الديني والإنساني","image" => "yazidi.jpg","name_fr" => "Abdassamad El Yazidi","occupation_fr" => "Vice-président chargé du dialogue religieux et humaniste"],
+                                        ["name_ar" => "حسان موسى","occupation_ar" => "نائب الرئيس مكلف بالتواصل مع المسلمين","image" => "hassan.jpg","name_fr" => "Hassene Moussa","occupation_fr" => "Vice-président chargé des mosquées, wakfs et imams"],
+                                        ["name_ar" => "فريد حناش","occupation_ar" => "الأمين العام","image" => "hanach.jpg","name_fr" => "Farid Hannache","occupation_fr" => "Secrétaire général"],
+                                        ["name_ar" => "فايد محمد السعيد","occupation_ar" => "نائب الأمين العام","image" => "faid.webp","name_fr" => "Fayad Saeed","occupation_fr" => "Secrétaire général adjoint"],
+                                        ["name_ar" => "محمد الونوغي","occupation_ar" => "أمين الصندوق","image" => "wanoghi.jpeg","name_fr" => "Mohamed Louanoughi","occupation_fr" => "Trésorier"],
+                                        ["name_ar" => "نصرت رمضاني","occupation_ar" => "نائب الأمين العام","image" => "ramadan.jpg","name_fr" => "Nusret Ramadani","occupation_fr" => "Trésorier adjoint"],
+                                        ["name_ar" => "أحمد تميم","occupation_ar" => "مستشار المكتب","image" => "ahmad-tamim.jpg","name_fr" => "Ahmed Tamim","occupation_fr" => "Conseiller du bureau"],
+                                        ["name_ar" => "نفيع الله عشيورف","occupation_ar" => "مستشار المكتب","image" => "achirof.jpeg","name_fr" => "Nafigulla Ashirov","occupation_fr" => "Conseiller du bureau"],
+                                        ["name_ar" => "حسام بن صديق خوجة","occupation_ar" => "مستشار المكتب","image" => "khoja.jpg","name_fr" => "Hussam Siddiq Khoja","occupation_fr" => "Conseiller du bureau"],
+                                        ["name_ar" => "مهاجري زيان","occupation_ar" => "مستشار المكتب","image" => "ziyan.jpg","name_fr" => "Mehadjri Ziane","occupation_fr" => "Conseiller du bureau"],
                                     ]
 
                         @endphp
@@ -617,10 +832,10 @@
                                     </div>
                                     <div class="lab-content">
 
-                                         <h6 class="card-title mb-3">{{$member['name']}}</h6>
+                                         <h6 class="card-title mb-3">{{$member['name_' . config('app.locale')]}}</h6>
 
                                         <div class="social-share">
-                                            <p class="card-text my-3">{{$member['occupation']}}</p>
+                                            <p class="card-text my-3">{{$member['occupation_' . config('app.locale')]}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -638,73 +853,141 @@
     <section class="feature-section padding-tb bg-ash" id="office-posts">
         <div class="container">
 
-            <h2 class="mb-5 text-center">اللجان</h2>
+            <h2 class="mb-5 text-center">{{__('The Commission')}}</h2>
+            @if(config('app.locale') == 'fr')
+                <div class="table-responsive">
+                    <table class="table table-secondary table-striped">
+                        <tbody>
+                        <tr>
+                            <td>Commission enseignement (complémentaire et institutionnel)</td>
+                            <td>Commission chargée de la communication et la coordination avec les organisations islamiques.</td>
+                        </tr>
 
-            <div class="table-responsive">
-                <table class="table table-secondary table-striped">
-                    <tbody>
-                    <tr>
-                        <td>لجنة التعليم (التكميلي والنظامي)</td>
-                        <td>لجنة الإتصال والتنسيق مع الهيئات الإسلامية</td>
-                    </tr>
+                        <tr>
+                            <td>Commission de contact avec les élites européennes (intellectuelles, médiatiques, politiques...)</td>
+                            <td>Commission du dialogue religieux et humain.</td>
+                        </tr>
 
-                    <tr>
-                        <td>لجنة التواصل مع النخب الأوروبية (الفكرية، الإعلامية، السياسية...)</td>
-                        <td>لجنة الحوار الديني والإنساني</td>
-                    </tr>
+                        <tr>
+                            <td>Commission juridique.</td>
+                            <td>Commission de la charia et de la religion.</td>
+                        </tr>
 
-                    <tr>
-                        <td>اللجنة الحقوقية</td>
-                        <td>اللجنة الشرعية والدينية</td>
-                    </tr>
-
-                    <tr>
-                        <td>لجنة الأوقاف الاستثمار</td>
-                        <td>لجنة الإعلام</td>
-                    </tr>
+                        <tr>
+                            <td>Commission des biens Habous et de l’investissement.</td>
+                            <td>Commission de l’information.</td>
+                        </tr>
 
 
-                    <tr>
-                        <td>لجنة المسلمين الجدد</td>
-                        <td>لجنة التحرير والترجمة والنشر</td>
-                    </tr>
+                        <tr>
+                            <td>Commission des néo-musulmans.</td>
+                            <td>Commission chargée de la rédaction, la traduction et l’édition.</td>
+                        </tr>
 
-                    <tr>
-                        <td>اللجنة الخيية والإنسانية</td>
-                        <td>لجنة الوقاية ومكافحة التطرف</td>
-                    </tr>
+                        <tr>
+                            <td>Commission des œuvres de bienfaisance et de l’humanitaire.</td>
+                            <td>Commission de la prévention et de lutte contre l’extrémisme.</td>
+                        </tr>
 
-                    <tr>
-                        <td>لجنة الوساطة وحل النزاعات</td>
-                        <td>لجنة القيم والأخلاق</td>
-                    </tr>
+                        <tr>
+                            <td>Commission de médiation et résolution des contentieux..</td>
+                            <td>Commission de l’environnement et du climat.</td>
+                        </tr>
 
-                    <tr>
-                        <td>لجنة الصحة والغذاء (دواء مخدرات والغذاء الحلال)</td>
-                        <td>لجنة البيئة والمناخ</td>
-                    </tr>
+                        <tr>
+                            <td>Commission des valeurs et de l’éthique.</td>
+                            <td>Commission de la santé et la nutrition (traitement de la toxicomanie et la nourriture halal).</td>
+                        </tr>
 
-                    <tr>
-                        <td>لجنة التراث والتاريخي الإسلامي</td>
-                        <td>لجنة حماية المساجد</td>
-                    </tr>
+                        <tr>
+                            <td>Commission du patrimoine et de l’histoire de l’islam.</td>
+                            <td>Commission de protection des mosquées.</td>
+                        </tr>
 
-                    <tr>
-                        <td>لجنة الشؤون الإجتماعية والأسرة</td>
-                        <td>لجنة الشباب</td>
-                    </tr>
+                        <tr>
+                            <td>Commission des affaires sociales et de la famille.</td>
+                            <td>Commission de la jeunesse.</td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="2">لجنة المسابقات القرآنية</td>
-                    </tr>
+                        <tr>
+                            <td colspan="2">Commission des concours de récitation du coran.</td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="2">المرصد: لجنة مكلفة برصد المعلومات والتقارير والمناشط حول الإسلام و المسلمين في أوروبا.</td>
-                    </tr>
+                        <tr>
+                            <td colspan="2">L’observatoire :  commission chargée de la collecte des informations, des rapports et des activités sur l’islam et les musulmans en Europe.</td>
+                        </tr>
 
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="table-responsive">
+                    <table class="table table-secondary table-striped">
+                        <tbody>
+                        <tr>
+                            <td>لجنة التعليم (التكميلي والنظامي)</td>
+                            <td>لجنة الإتصال والتنسيق مع الهيئات الإسلامية</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة التواصل مع النخب الأوروبية (الفكرية، الإعلامية، السياسية...)</td>
+                            <td>لجنة الحوار الديني والإنساني</td>
+                        </tr>
+
+                        <tr>
+                            <td>اللجنة الحقوقية</td>
+                            <td>اللجنة الشرعية والدينية</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة الأوقاف الاستثمار</td>
+                            <td>لجنة الإعلام</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>لجنة المسلمين الجدد</td>
+                            <td>لجنة التحرير والترجمة والنشر</td>
+                        </tr>
+
+                        <tr>
+                            <td>اللجنة الخيية والإنسانية</td>
+                            <td>لجنة الوقاية ومكافحة التطرف</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة الوساطة وحل النزاعات</td>
+                            <td>لجنة القيم والأخلاق</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة الصحة والغذاء (دواء مخدرات والغذاء الحلال)</td>
+                            <td>لجنة البيئة والمناخ</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة التراث والتاريخي الإسلامي</td>
+                            <td>لجنة حماية المساجد</td>
+                        </tr>
+
+                        <tr>
+                            <td>لجنة الشؤون الإجتماعية والأسرة</td>
+                            <td>لجنة الشباب</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">لجنة المسابقات القرآنية</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">المرصد: لجنة مكلفة برصد المعلومات والتقارير والمناشط حول الإسلام و المسلمين في أوروبا.</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            @endif
+
         </div>
     </section>
     <!-- Feature Section End Here -->
