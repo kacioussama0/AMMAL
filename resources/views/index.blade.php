@@ -24,7 +24,7 @@
                             <div class="carousel-content mb-4">
                                 <div class="mb-3">{{$post ->created_at -> diffForHumans()}}</div>
                                 <a href="{{url('ar/category/' .  $post->category->title)}}" class="link-dark badge bg-light">{{$post -> category -> title()}}</a>
-                                <h4 class="lh-lg"><a href="{{url('ar/post/' .  $post->slug())}}" class="link-light ">{{$post->title()}}</a></h4>
+                                <h4 class="lh-lg"><a href="{{url(config('app.locale') . '/post/' .  $post->slug())}}" class="link-light ">{{$post->title()}}</a></h4>
 
                             </div>
                             <img src="{{asset('storage/' . $post -> thumbnail())}}" class="d-block w-100 " alt="...">
@@ -83,7 +83,7 @@
                                                 <img src="{{asset('storage/' . $post->thumbnail())}}" alt="event-image" style="height: 250px;object-fit: cover">
                                             </div>
                                             <div class="lab-content py-3">
-                                                <h5 class="fs-6"><a href="{{url('ar/post/' .  $post->slug())}}" class="text-truncate">{{$post->title()}}</a> </h5>
+                                                <h5 class="fs-6"><a href="{{url( config('app.locale') .'/post/' .  $post->slug())}}" class="text-truncate">{{$post->title()}}</a> </h5>
                                                 <ul class="lab-ul event-date">
                                                     <li><i class="icofont-calendar"></i> <span>{{date_format($post->created_at,'d-m-Y')}}</span>
                                                     </li>

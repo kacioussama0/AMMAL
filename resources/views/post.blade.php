@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Page Header Section Start Here -->
-    <section class="page-header bg_img padding-tb" style="background-image: url('{{asset('storage/'. $post->thumbnail)}}')">
+    <section class="page-header bg_img padding-tb" style="background-image: url('{{asset('storage/'. $post->thumbnail())}}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
@@ -59,7 +59,7 @@
 
                             <div class="widget widget-category">
                                 <div class="widget-header">
-                                    <h5>التصنيفات</h5>
+                                    <h5>{{__("Categories")}}</h5>
                                 </div>
                                 <ul class="lab-ul widget-wrapper list-bg-none">
                                     @foreach($categories as $category)
@@ -74,7 +74,7 @@
 
                             <div class="widget widget-tags">
                                 <div class="widget-header">
-                                    <h5>الوسوم</h5>
+                                    <h5>{{__("Tags")}}</h5>
                                 </div>
                                 <ul class="lab-ul widget-wrapper">
                                     @foreach($tags as $tag)
