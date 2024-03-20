@@ -38,6 +38,7 @@ class SiteController extends Controller
    {
 
        App::setLocale($lang);
+
        $category = Category::where('slug','=',$slug)->first();
 
 
@@ -57,7 +58,7 @@ class SiteController extends Controller
        $categories = Category::where('published',1)->latest()->get();
        $tags = Tag::where('is_published',1)->latest()->get();
 
-       $post = Post::where('slug',$slug)->first();
+       $post = Post::where('slug',$slug)->whereOr("slug_" . $lang , $slug)->first();
 
        return view('post',compact('categories','tags','post'));
    }
