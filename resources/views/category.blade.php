@@ -7,7 +7,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h1 class="ph-title">{{$category->title}}</h1>
+                <h1 class="ph-title">{{$category->title()}}</h1>
             </div>
         </div>
     </section>
@@ -30,7 +30,7 @@
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <a href="blog-single.html">
+                                            <a href="{{url(config('app.locale') . '/post/' .  $post->slug())}}">
                                                 <h3>{{$post->title()}}</h3>
                                             </a>
                                             <ul class="lab-ul post-date">
@@ -38,7 +38,7 @@
 												</span></li>
                                                 </li>
                                             </ul>
-                                            <a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/post/' . $post->slug())}}" class="lab-btn">قراءة المزيد</a>
+                                            <a href="{{url(config('app.locale') . '/post/' .  $post->slug())}}" class="lab-btn">قراءة المزيد</a>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
 
                             <div class="widget widget-category">
                                 <div class="widget-header">
-                                    <h5>التصنيفات</h5>
+                                    <h5>{{__("Categories")}}</h5>
                                 </div>
                                 <ul class="lab-ul widget-wrapper list-bg-none">
                                     @foreach($categories as $category)
@@ -79,7 +79,7 @@
 
                             <div class="widget widget-tags">
                                 <div class="widget-header">
-                                    <h5>الوسوم</h5>
+                                    <h5>{{__("Tags")}}</h5>
                                 </div>
                                 <ul class="lab-ul widget-wrapper">
                                     @foreach($tags as $tag)
