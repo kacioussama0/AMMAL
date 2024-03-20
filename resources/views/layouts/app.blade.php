@@ -10,14 +10,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="follow, index">
-    <meta name="description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.">
+    @if(config('app.locale') == 'fr')
+        <meta name="description" content="AMMALE est une association indépendante dont le siège principal est à Paris, elle disposera de filiales dans certains pays européens, à commencer par la capitale Bruxelles.">
+        <meta property="og:description" content="AMMALE est une association indépendante dont le siège principal est à Paris, elle disposera de filiales dans certains pays européens, à commencer par la capitale Bruxelles." />
+    @else
+        <meta name="description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير.">
+        <meta property="og:description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير." />
+    @endif
+
     <meta name="title" content="{{__("Title") . ' | '}} @yield('title')">
     <meta name="theme-color" content="#1D1E19">
     <meta name="author" content="AMMALE">
     <meta name="keywords" content="فرنسا,مسجد باريس الكبير,فرنسا,المجلس التنسيقي ,آمال">
-
     <meta property="og:title" content="{{__("Title") . ' | '}} @yield('title')" />
-    <meta property="og:description" content="مؤسسة مستقلة مقرها الرئيسي باريس ، وستكون لديها مقار فرعية في بعض الدول الأوروبية،بدءا بالعاصمة بروكسيل.وضع لبنتها الأولى الأفراد ومندوبو المؤسسات الإسلامية الذين إجتمعوا في المجلس التأسيسي المنعقد في يوم السبت 22 ربيع الأول 1445 هجري الموافق 7 أكتوبر 2023 ميلادي في مقر مسجد باريس الكبير." />
     <meta property="og:image" content="{{asset('assets/images/logo/logo-arabic.svg')}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_SA" />
